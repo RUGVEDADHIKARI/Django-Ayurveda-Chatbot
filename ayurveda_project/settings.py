@@ -26,13 +26,10 @@ SECRET_KEY = 'django-insecure-=h%1&+l1fuzzl(1z+#g6!u^4k!)0f$^3&vt+ax67-61e*!&*r2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [  
-    'django-ayurveda-chatbot.onrender.com',    # (optional) old one
-    'localhost',
-    '127.0.0.1'
-]
-
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS',
+    django-ayurveda-chatbot.onrender.com,localhost,127.0.0.1'
+).split(',')
 
 # Application definition
 
