@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get(
     'ALLOWED_HOSTS',
-    django-ayurveda-chatbot.onrender.com,localhost,127.0.0.1'
+    django-ayurveda-chatbot-1.onrender.com,localhost,127.0.0.1'
 ).split(',')
 
 # Application definition
