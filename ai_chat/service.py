@@ -42,7 +42,7 @@ If asked about non-Ayurvedic topics, gently redirect to Ayurvedic wellness and h
 
 Provide practical, safe, and authentic Ayurvedic guidance rooted in traditional texts and modern research.
 """
-VECTOR_STORE_PATH = r"ai_chat/vectorstore" # ADJUST THIS PATH
+VECTOR_STORE_PATH = r"Django-Ayurveda-Chatbot/ai_chat/vectorstore" # ADJUST THIS PATH
 
 class AyurVedaAgentService:
     def __init__(self):
