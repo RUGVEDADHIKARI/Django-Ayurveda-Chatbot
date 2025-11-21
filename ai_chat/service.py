@@ -81,7 +81,7 @@ class AyurVedaAgentService:
         self.llm = None
         if not offline:
             try:
-                self.llm = InferenceClient("meta-llama/Llama-3.2-3B-Instruct", token=os.getenv("HF_TOKEN")
+                self.llm = InferenceClient("meta-llama/Llama-3.2-3B-Instruct", token=os.getenv("HF_TOKEN"))
             except Exception as e:
                 print(f"Warning: LLM initialization failed: {e}")
 
