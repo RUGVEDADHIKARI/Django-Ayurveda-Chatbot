@@ -12,6 +12,7 @@ from langchain.agents import create_openai_functions_agent, AgentExecutor
 from langchain_community.chat_message_histories.upstash_redis import UpstashRedisChatMessageHistory
 from langchain_together import ChatTogether
 from langchain.memory import ConversationBufferMemory
+from huggingface_hub import InferenceClient
 
 load_dotenv() # Load env vars here for the service
 
@@ -80,12 +81,7 @@ class AyurVedaAgentService:
         self.llm = None
         if not offline:
             try:
-                self.llm = ChatTogether(
-                    model="meta-llama/Llama-3-70b-chat-hf",
-                    temperature=0.7,
-                    max_tokens=1024,
-                    api_key=os.getenv("TOGETHER")
-                )
+                self.llm = InferenceClient("meta-llama/Llama-3.2-3B-Instruct", token=os.getenv("HF_TOKEN")
             except Exception as e:
                 print(f"Warning: LLM initialization failed: {e}")
 
