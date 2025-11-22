@@ -2,18 +2,15 @@
 import os
 import hashlib
 from dotenv import load_dotenv
-
+# --- UPDATED IMPORTS ---
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings # Updated: from langchain_huggingface
 from langchain_community.vectorstores import FAISS
 from langchain_community.tools.tavily_search import TavilySearchResults
-
-from langchain.tools import create_retriever_tool   # UPDATED IMPORT
-from langchain.agents import create_structured_chat_agent, AgentExecutor  # UPDATED
-from langchain_community.chat_message_histories.upstash_redis import UpstashRedisChatMessageHistory
-
+from langchain_core.tools.retriever import create_retriever_tool
+from langchain.agents import create_openai_functions_agent, AgentExecutor # Kept original agent creation function
+from langchain_community.chat_message_histories import UpstashRedisChatMessageHistory # Updated: from submodule
 from langchain_together import ChatTogether
 from langchain.memory import ConversationBufferMemory
 from huggingface_hub import InferenceClient
