@@ -9,7 +9,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings # Updated: from
 from langchain_community.vectorstores import FAISS
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.tools.retriever import create_retriever_tool
-from langchain.agents import create_openai_functions_agent, AgentExecutor # Kept original agent creation function
+from langchain.agents.openai_functions import create_openai_functions_agent
+from langchain.agents import AgentExecutor
 from langchain_community.chat_message_histories import UpstashRedisChatMessageHistory # Updated: from submodule
 from langchain_together import ChatTogether
 from langchain.memory import ConversationBufferMemory
