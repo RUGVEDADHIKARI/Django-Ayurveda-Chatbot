@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.tools.retriever import create_retriever_tool
+from langchain_community.tools.retriever import create_retriever_tool
 from langchain.agents import create_openai_functions_agent, AgentExecutor
 from langchain_community.chat_message_histories.upstash_redis import UpstashRedisChatMessageHistory
 from langchain_together import ChatTogether
