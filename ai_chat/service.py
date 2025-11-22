@@ -13,6 +13,7 @@ from langchain_community.chat_message_histories.upstash_redis import UpstashRedi
 from langchain_together import ChatTogether
 from langchain.memory import ConversationBufferMemory
 from huggingface_hub import InferenceClient
+from langchain_tavily import TavilySearch
 
 load_dotenv() # Load env vars here for the service
 
@@ -55,7 +56,7 @@ class AyurVedaAgentService:
             try:
                 tavily_key = os.getenv("TAVILY")
                 if tavily_key:
-                    self.tools.append(TavilySearchResults(tavily_api_key=tavily_key))
+                    self.tools.append(TavilySearch(tavily_api_key=tavily_key))
             except Exception as e:
                 print(f"Warning: Tavily disabled: {e}")
 
